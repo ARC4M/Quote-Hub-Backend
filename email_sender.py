@@ -7,7 +7,7 @@ load_dotenv()
 
 def enviar_email(destinatario, asunto, cuerpo, archivo_pdf):
     remitente = "camiloandresbenitezvaldes@gmail.com"
-    password = "wkqo jlut ocja cgke"
+    password = os.getenv("EMAIL_PASSWORD")
 
 
     mensaje = EmailMessage()

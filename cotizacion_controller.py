@@ -616,12 +616,6 @@ def logout(empresa):
     db.session.commit()
     return jsonify({"mensaje": "Sesión cerrada."}), 200
 
-
-@cotizacion_bp.route("/", methods=["GET"])
-def home():
-    return jsonify({"mensaje": "Bienvenido a la API de Cotizador"}), 200
-
-
 # --- ADMIN: Listar empresas (solo datos generales) ---
 @cotizacion_bp.route("/admin/empresas", methods=["GET"])
 @admin_required
@@ -1242,3 +1236,7 @@ def descargar_plantilla_excel(empresa):
             "Content-Disposition": "attachment; filename=plantilla_productos.xlsx"
         },
     )
+    
+@cotizacion_bp.route("/", methods=["GET"])
+def index():
+    return jsonify({"mensaje": "Bienvenido a la API de Quote Hub"}), 200
