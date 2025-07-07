@@ -9,4 +9,6 @@ RUN pip install -r requirements.txt
 
 COPY . .
 
+# Exponer el puerto 5000
+EXPOSE 5000
 CMD ["python", "app.py"]
