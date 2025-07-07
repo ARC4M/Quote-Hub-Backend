@@ -171,7 +171,7 @@ def register():
 
 
 # --- Endpoint de login de empresa y administrador ---
-@cotizacion_bp.route("/login", methods=["POST"])
+@cotizacion_bp.route("/api/login", methods=["POST"])
 def login():
     data = request.json or {}
     if not data.get("email") or not data.get("password"):
